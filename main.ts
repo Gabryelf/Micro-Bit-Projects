@@ -87,6 +87,7 @@ input.onButtonPressed(Button.B, function () {
 let count = 0
 basic.clearScreen()
 count = 0
+music.play(music.tonePlayable(262, music.beat(BeatFraction.Whole)), music.PlaybackMode.InBackground)
 basic.showLeds(`
     # # . # #
     # # . # #
@@ -98,4 +99,5 @@ basic.forever(function () {
     if (count == 0) {
         basic.clearScreen()
     }
+    music._playDefaultBackground(music.builtInPlayableMelody(Melodies.Birthday), music.PlaybackMode.UntilDone)
 })
