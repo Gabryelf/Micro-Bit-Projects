@@ -1,29 +1,101 @@
-input.onGesture(Gesture.Shake, function () {
-    basic.clearScreen()
-    count = randint(1, 7)
-})
-let count = 0
-count = 0
-basic.forever(function () {
+input.onButtonPressed(Button.A, function () {
+    count = 0
+    count = randint(1, 6)
     if (count == 1) {
-        basic.showString("Yes")
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . . # . .
+            . . . . .
+            . . . . .
+            `)
     }
     if (count == 2) {
-        basic.showString("No")
+        basic.showLeds(`
+            . . . . .
+            . . . # .
+            . . . . .
+            . # . . .
+            . . . . .
+            `)
     }
     if (count == 3) {
-        basic.showString("Most likely yes")
+        basic.showLeds(`
+            . . . . #
+            . . . . .
+            . . # . .
+            . . . . .
+            # . . . .
+            `)
     }
     if (count == 4) {
-        basic.showString("Most likely no")
+        basic.showLeds(`
+            # . . . #
+            . . . . .
+            . . . . .
+            . . . . .
+            # . . . #
+            `)
     }
     if (count == 5) {
-        basic.showString("Exactly yes")
+        basic.showLeds(`
+            # . . . #
+            . . . . .
+            . . # . .
+            . . . . .
+            # . . . #
+            `)
     }
     if (count == 6) {
-        basic.showString("Exactly no")
+        basic.showLeds(`
+            # . . . #
+            . . . . .
+            # . . . #
+            . . . . .
+            # . . . #
+            `)
     }
-    if (count == 7) {
-        basic.showString("Not definitely")
+})
+input.onButtonPressed(Button.B, function () {
+    count = 0
+    count = randint(1, 6)
+    if (count == 1) {
+        basic.showNumber(1)
+    }
+    if (count == 2) {
+        basic.showNumber(2)
+    }
+    if (count == 3) {
+        basic.showNumber(3)
+    }
+    if (count == 4) {
+        basic.showNumber(3)
+    }
+    if (count == 4) {
+        basic.showNumber(4)
+    }
+    if (count == 4) {
+        basic.showNumber(5)
+    }
+    if (count == 5) {
+        basic.showNumber(5)
+    }
+    if (count == 6) {
+        basic.showNumber(6)
+    }
+})
+let count = 0
+basic.clearScreen()
+count = 0
+basic.showLeds(`
+    # # . # #
+    # # . # #
+    . . . . .
+    # . . . #
+    . # # # .
+    `)
+basic.forever(function () {
+    if (count == 0) {
+        basic.clearScreen()
     }
 })
